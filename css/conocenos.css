@@ -1,7 +1,7 @@
 /* Contenedor Parallax */
 .parallax-container {
   position: relative;
-  min-height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -15,33 +15,40 @@
   background-size: cover;
   padding-bottom: 180px;
   font-family: "Wix Madefor Display", sans-serif;
+  z-index: 1;
 }
 
-/* Contenedor de múltiples tarjetas alineadas */
+.parallax-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .conocenos-row {
   display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
-  justify-content: space-between; /* Distribuye las tarjetas con espacio entre ellas */
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo */
-  margin: 0 auto; /* Centra el contenido en pantallas grandes */
-  gap: 20px; /* Espacio entre las tarjetas */
-  margin-top: 80px;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  gap: 20px;
 }
 
-/* Estilo para las tarjetas */
 .conocenos-content {
-  background-color: rgba(5, 66, 8, 0.7); /* Fondo dorado translúcido */
+  background-color: rgba(5, 66, 8, 0.7);
   padding: 20px;
   border-radius: 15px;
   margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(255, 253, 253, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6); /* Efecto biselado */
-  backdrop-filter: blur(10px); /* Añadir desenfoque */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-  width: calc(
-    50% - 20px
-  ); /* Calcula el ancho para que quepan 2 tarjetas con un espacio de 20px entre ellas */
+  box-shadow: 0 4px 8px rgba(255, 253, 253, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: calc(50% - 20px);
   min-height: 520px;
   box-sizing: border-box;
   display: flex;
@@ -50,31 +57,28 @@
   overflow: hidden;
 }
 
-/* Estilo de la tarjeta grande (CEO) */
 .center-section {
-  width: 100%; /* Tarjeta grande ocupa todo el ancho */
+  width: 100%;
   max-width: 1200px;
   min-height: 370px;
   display: flex;
-  flex-direction: row; /* El contenido fluye en fila */
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px auto 50px;
   padding: 20px;
   box-sizing: border-box;
-  background-color: rgba(5, 66, 8, 0.7); /* Fondo verde translúcido */
+  background-color: rgba(5, 66, 8, 0.7);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6); /* Efecto biselado */
-  backdrop-filter: blur(10px); /* Añadir desenfoque */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-  margin-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #ffffff;
   z-index: 5;
 }
 
-/* Ajustes para la imagen de la CEO */
 .photo-section {
-  flex: 1; /* Ocupa 1 parte del espacio */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,7 +91,6 @@
   margin-bottom: 10px;
 }
 
-/* Texto debajo de la foto */
 .photo-section h1,
 .photo-section h2 {
   color: #ffffff;
@@ -105,9 +108,8 @@
   margin-top: 0;
 }
 
-/* Estilo del párrafo en la tarjeta grande */
 .text-section {
-  flex: 2; /* Ocupa 2 partes del espacio */
+  flex: 2;
   text-align: justify;
 }
 
@@ -117,14 +119,26 @@
   margin: 0 20px;
   line-height: 1.8;
 }
+
 .set-title-animation {
-  font-size: 1.6rem;
-  padding: 0 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
   word-wrap: break-word;
   box-sizing: border-box;
 }
 
-/* Botón "Leer más" centrado */
+.set-paragraph-animation {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: justify;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
 .read-more-btn {
   background-color: transparent;
   color: #ffffff;
@@ -134,58 +148,35 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 10px;
-  display: none; /* Oculto por defecto en pantallas grandes */
-  margin-left: auto;
-  margin-right: auto; /* Centra el botón horizontalmente */
+  margin: 10px auto 0;
   text-align: center;
-  display: block; /* Asegura que el botón sea de tipo bloque */
+  display: block;
 }
 
 .read-more-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Efecto hover transparente */
-  border-color: #f3f3f0; /* Cambia el color del borde al hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #f3f3f0;
 }
 
 .read-more-btn:active {
-  background-color: rgba(0, 0, 0, 0.7); /* Efecto al presionar */
+  background-color: rgba(0, 0, 0, 0.7);
   border-color: #ffffff;
 }
 
-/* Animación de títulos */
-.set-title-animation {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Animación de párrafos */
-.set-paragraph-animation {
-  font-size: 20px;
-  color: #ffffff;
-  text-align: justify;
-  flex-grow: 1;
-  margin-bottom: 20px;
-}
-
-/* Adaptaciones para pantallas pequeñas */
 @media (max-width: 768px) {
   .conocenos-row {
-    flex-direction: column; /* Tarjetas en columna en pantallas pequeñas */
+    flex-direction: column;
     width: 100%;
-    padding: 0 5%; /* Margen del 5% en ambos lados de la pantalla */
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+    padding: 0 5%;
+    box-sizing: border-box;
   }
 
   .conocenos-content {
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    width: 100%;
     min-height: 0;
     font-size: 15px;
-    padding: 10px; /* Espacio interno dentro de las tarjetas */
-    margin-bottom: 10px; /* Espacio entre las tarjetas */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    padding: 10px;
+    margin-bottom: 10px;
   }
 
   .center-section {
@@ -193,64 +184,43 @@
     text-align: center;
     min-height: 0;
     font-size: 15px;
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
     width: 90%;
     padding: 10px;
+    box-sizing: border-box;
   }
 
   .photo-section {
     margin-bottom: 20px;
   }
 
-  /* Mostrar el botón Leer Más en pantallas pequeñas */
-  .read-more-btn {
-    display: block; /* Botón aparece en pantallas pequeñas */
+  .set-title-animation {
+    font-size: 1.4rem;
+    padding: 0 10px;
   }
 
-  /* Mostrar solo el texto corto por defecto en pantallas pequeñas */
+  .read-more-btn {
+    display: block;
+  }
+
   .text-short {
     display: block;
   }
 
-  /* Ocultar el texto completo por defecto en pantallas pequeñas */
   .text-full {
     display: none;
   }
 }
 
-/* Adaptaciones para pantallas grandes */
 @media (min-width: 769px) {
-  /* Mostrar el texto completo en pantallas grandes */
   .text-full {
     display: block;
   }
 
-  /* Ocultar el botón Leer Más en pantallas grandes */
   .read-more-btn {
     display: none;
   }
 
-  /* Ocultar el texto corto en pantallas grandes */
   .text-short {
     display: none;
   }
-}
-/* 🎥 Video de fondo para sección Conócenos */
-.parallax-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: #000; /* Color de respaldo en caso de que el video no cargue */
-}
-
-.parallax-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
- 
-  pointer-events: none;
 }
