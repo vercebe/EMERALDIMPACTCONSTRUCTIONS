@@ -1,0 +1,34 @@
+@import url("css/header.css");
+@import url("css/whatsapp.css");
+@import url("css/footer.css");
+@import url("css/video.css");
+@import url("css/formulario.css");
+@import url("css/conocenos.css");
+@import url("css/servicios.css");
+@import url("css/contactanos.css");
+@import url("css/scroll.css");
+@import url("css/modalinfo.css");
+
+/*fonts inpor*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Wix+Madefor+Display:wght@400..800&display=swap");
+
+html {
+  scroll-behavior: smooth; /* Habilita el smooth scroll en todo el documento */
+}
+
+/* Estilos generales del cuerpo de la página */
+html,
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0px; /* Elimina los márgenes por defecto */
+  padding: 0px; /* Elimina el padding por defecto */
+  background-color: #ffffff; /* Color de fondo blanco */
+  color: #000; /* Color de texto negro */
+  overflow-y: yes;
+  height: 100%;
+}
+/* Sobreescribe las esquinas redondeadas de todas las secciones */
+section {
+  border-radius: 0 !important; /* Asegura que las esquinas sean cuadradas */
+  width: 100%;
+}

@@ -1,0 +1,320 @@
+/* Paleta base:
+   - Verde esmeralda: #2ecc71
+   - Gris oscuro: #1e1e1e
+   - Blanco: #ffffff
+*/
+
+.wrapper {
+  animation: scroll-background 100s linear infinite;
+  background: url("https://img.freepik.com/foto-gratis/rascacielos-cristal-contra-cielo-azul-vista-abajo_93675-134914.jpg") #1e1e1e;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+@keyframes scroll-background {
+  100% {
+    background-position: 0px -400%;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll-background 800s linear infinite;
+  }
+}
+
+#Servicios {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-bottom: 100px;
+  overflow-x: hidden;
+}
+
+#Servicios h1 {
+  font-size: 45px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  color: #2ecc71;
+  text-shadow: 0px 0px 10px rgba(46, 204, 113, 0.4);
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: calc(100% - 40px);
+  padding: 0;
+  box-sizing: border-box;
+  gap: 15px;
+}
+
+.service-box {
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+  min-height: 290px;
+  background-color: rgba(30, 30, 30, 0.95);
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.2), 0 0 15px rgba(46, 204, 113, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #2ecc71;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+}
+
+.service-box .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2ecc71;
+}
+
+.service-box h3 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.service-box p {
+  font-size: 0.8rem;
+  margin: 5px 0 0 0;
+  padding: 0 5px;
+  flex-grow: 1;
+}
+
+.toggle-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.toggle-icon i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: #2ecc71;
+}
+
+.expanded {
+  padding-bottom: 40px;
+}
+
+.expanded .toggle-icon i {
+  transform: rotate(180deg);
+}
+
+.toggle-icon:hover i,
+.expanded .toggle-icon:hover i {
+  animation: bounce-up 1s ease infinite;
+}
+
+@keyframes bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.sub-menu {
+  display: none;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+
+.sub-menu h4 {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #2ecc71;
+  border-radius: 5px;
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #ffffff;
+}
+
+.gray-box .sub-menu ul {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.sub-menu ul li {
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+.sub-menu ul li:hover {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.marquee-title {
+  color: #2ecc71;
+  text-shadow: 0px 0px 5px rgba(46, 204, 113, 0.3);
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+.marquee-text {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid rgba(46, 204, 113, 0.4);
+  border-bottom: 2px solid rgba(46, 204, 113, 0.4);
+  padding: 15px 0;
+  color: #ffffff;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+  margin-bottom: 20px;
+}
+
+.marquee-text span {
+  display: inline-block;
+  animation: marquee-text-scroll 560s linear infinite;
+}
+
+@keyframes marquee-text-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slider {
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+.slide-track {
+  animation: scroll-images 40s linear infinite;
+  display: flex;
+  overflow-x: hidden;
+  width: calc((250px + 5px) * 14);
+}
+
+@keyframes scroll-images {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((-250px - 5px) * 7));
+  }
+}
+
+.slide {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.slide img {
+  width: 250px;
+  height: 250px;
+  object-fit: fill;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 2px 0;
+  background-color: rgba(30, 30, 30, 0.6);
+}
+
+@media (max-width: 768px) {
+  .service-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  #Servicios h1 {
+    font-size: 2.5rem;
+  }
+
+  .slider {
+    height: auto;
+  }
+}
+
+@media (min-width: 891px) and (max-width: 1206px) {
+  .service-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-box {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    margin: 10px;
+  }
+
+  .service-row .service-box:nth-child(4) ~ .service-box {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+}

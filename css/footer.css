@@ -1,0 +1,196 @@
+/* Componente: Footer (Pie de página) */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(80, 200, 120, 0.3); /* Biselado verde esmeralda translúcido */
+  color: #50c878; /* Verde esmeralda */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
+footer {
+  background-color: rgba(80, 200, 120, 0.5); /* Verde esmeralda translúcido */
+  color: #ffffff;
+  padding: 5px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Biselado más brillante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estructura del contenido del pie de página */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Estilo general para los iconos sociales */
+.social-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  fill: white;
+  color: white;
+  transition: fill 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover .social-icon {
+  fill: #1a4d3f;
+  color: #1a4d3f;
+}
+
+svg.social-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Componente: Sección de iconos sociales */
+.footer-section.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Texto de derechos de autor dentro del pie de página */
+.footer-copy {
+  margin-top: 7px;
+  font-size: 14px;
+  color: #ffffff;
+}
+/* Componente: Formulario emergente actualizado al estilo del footer */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro y consistente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  overflow: auto;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
+.form-container {
+  background-color: rgba(80, 200, 120, 0.35); /* Verde esmeralda translúcido */
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  max-height: 90%;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  text-align: center;
+  font-family: "Wix Madefor Display", sans-serif;
+}
+
+.form-container h2 {
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+  color: #eeeeee;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+}
+
+/* Botón de envío con estilo Footer */
+.btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto 0 auto;
+  display: block;
+  width: 60%;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(80, 200, 120, 0.6);
+}
+
+/* Mensajes de estado del formulario */
+#loading-animation,
+#success-message {
+  background-color: rgba(80, 200, 120, 0.9);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajustes responsivos para pantallas pequeñas (móviles) */
+@media only screen and (max-width: 768px) {
+  .footer-section.social-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-copy {
+    margin-top: 7px;
+    font-size: 8px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
