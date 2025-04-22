@@ -347,7 +347,7 @@
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 890px) {
   .parallax-image1 {
-    background-image: url("https://img.freepik.com/free-photo/transparent-green-creativity-modern-art-ink-colors-are-amazingly-bright-luminous-translucent-freeflowing-dry-quickly-natural-pattern-luxury-abstract-artwork-trendy-style_1258-96184.jpg?t=st=1745252031~exp=1745255631~hmac=71a682e16484017538706817fb688d91e23ffcb41ef8e052bd62ed5e83a0dbc6&w=1380"");
+    background-image: url("https://img.freepik.com/free-photo/transparent-green-creativity-modern-art-ink-colors-are-amazingly-bright-luminous-translucent-freeflowing-dry-quickly-natural-pattern-luxury-abstract-artwork-trendy-style_1258-96184.jpg?t=st=1745252031~exp=1745255631~hmac=71a682e16484017538706817fb688d91e23ffcb41ef8e052bd62ed5e83a0dbc6&w=1380");
     background-size: cover;
     height: 800px;
   }
