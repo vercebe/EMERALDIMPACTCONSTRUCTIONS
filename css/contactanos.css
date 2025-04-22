@@ -142,12 +142,19 @@
   margin-top: 120px;
   font-family: "Playfair Display", serif;
 }
+
 #slogan3 {
   font-size: 40px;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   color: #ffffff;
   z-index: 6;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
 }
 
 /* Contenedor del formulario */
@@ -258,13 +265,13 @@
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaaaaa;
-  font-size: 16px; /* Asegura que todos los placeholders tengan el mismo tamaño de fuente */
+  font-size: 16px;
 }
 
 /* Estilo específico para el campo de texto (textarea) */
 .contact-form textarea {
   height: 100px;
-  resize: none; /* Desactiva el redimensionado manual */
+  resize: none;
 }
 
 .contact-form .btn-submit {
@@ -300,7 +307,6 @@
   text-align: center;
 }
 
-/* Estilo para el enlace de teléfono clicable */
 .clickable-phone {
   color: #1c4169;
   text-decoration: none;
@@ -313,7 +319,6 @@
   margin-right: 8px;
 }
 
-/* Estilo para el enlace de correo clicable */
 .clickable-email {
   color: #1c4169;
   text-decoration: none;
@@ -326,7 +331,6 @@
   margin-right: 8px;
 }
 
-/* Efecto hover para el teléfono y correo */
 .clickable-phone:hover,
 .clickable-email:hover {
   text-decoration: underline;
@@ -351,9 +355,9 @@
 
   #slogan3 {
     font-size: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -479,12 +483,13 @@
     text-align: right;
   }
 }
+
 /* Agrupa y centra la dirección + botón */
 .address-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px; /* Espacio debajo del bloque */
+  margin-bottom: 20px;
 }
 
 .address-block p {
