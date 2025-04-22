@@ -1,26 +1,27 @@
 /* Componente: Header (Encabezado del sitio) */
 header {
   position: fixed;
-  width: 100%; /* El header ocupa todo el ancho */
+  width: 100%;
   top: 0;
   left: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.85) 66%,
-    rgba(80, 200, 120, 0.8) 100%
+    rgba(255, 255, 255, 0.195) 0%,
+    rgba(255, 255, 255, 0.156) 66%,
+    rgba(80, 200, 120, 0.195) 100%
   );
   display: flex;
-  justify-content: space-between; /* Espacia logo a la izquierda y nav a la derecha */
+  justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  height: 75px; /* Altura estándar del header */
-  border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(80, 200, 120, 0.3); /* Biselado verde esmeralda translúcido */
-  color: #50c878; /* Verde esmeralda */
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #50c878;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background-color: transparent;
+  border: none;
 }
 
 /* Componente: Logo */
@@ -53,6 +54,7 @@ header {
   font-size: 18px;
   margin-top: 15px;
   margin-right: 15px;
+  padding: 8px 12px;
 }
 
 .navbar ul {
@@ -109,7 +111,6 @@ header {
 
 /* Ajustes para pantallas medianas */
 @media only screen and (max-width: 1024px) {
- 
   .navbar ul li a {
     font-size: 16px;
     padding: 8px 8px;
