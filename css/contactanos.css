@@ -135,12 +135,16 @@
 }
 
 #slogan2 {
-  font-size: 30px;
+  font-size: clamp(18px, 4vw, 28px);
   font-weight: bold;
   color: #000000;
   z-index: 6;
   margin-top: 120px;
   font-family: "Playfair Display", serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #slogan3 {
@@ -155,6 +159,9 @@
   word-break: break-word;
   white-space: normal;
   text-align: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: clamp(20px, 6vw, 40px);
 }
 
 /* Contenedor del formulario */
@@ -339,11 +346,7 @@
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 890px) {
-  .parallax-image1 {
-    background-image: url("/assets/servicioslider/bombilla2small.jpg");
-    background-size: cover;
-    height: 800px;
-  }
+ 
 
   .slogan1 {
     font-size: 14px;
