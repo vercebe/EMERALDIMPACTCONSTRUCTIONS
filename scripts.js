@@ -526,51 +526,50 @@ window.addEventListener("scroll", function () {
   const zoomInFactor = 1 + scrollPos / 8000; // Adjust zoom factor for slogan
   sloganText.style.transform = `scale(${zoomInFactor})`;
 });
-
 // Envío del formulario de contacto
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar el envío tradicional del formulario
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
 
-    // Mostrar la animación de carga (opcional)
-    document.getElementById("loading-animation").style.display = "block";
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evitar el envío normal
 
-    // Capturar los datos del formulario
-    var formData = new FormData();
-    formData.append("nombre", document.getElementById("nombre1").value); // Usar el id "nombre1" pero enviar como "nombre"
-    formData.append("correo", document.getElementById("correo").value);
-    formData.append("mensaje", document.getElementById("mensaje").value);
+      const loadingAnimation = document.getElementById("loading-animation");
+      const successMessage = document.getElementById("success-message");
+      const errorMessage = document.getElementById("error-message");
 
-    // Enviar los datos a Google Apps Script
-    fetch(
-      "https://script.google.com/macros/s/AKfycbzqzfxmZoYygKHuE4OB9vwHjM6tClBX-g4WN8W2TvSQEEyXqDbURIxM23Tcl45JqVVxnQ/exec",
-      {
+      // Mostrar animación de cargando
+      loadingAnimation.style.display = "block";
+      successMessage.style.display = "none";
+      if (errorMessage) errorMessage.style.display = "none";
+
+      // Capturar los datos (aunque no esperamos respuesta)
+      const formData = new FormData(contactForm);
+
+      // Simular el envío (realmente no esperamos confirmación)
+      fetch("https://script.google.com/macros/s/AKfycbyqR015HBDpu_MOXjPJWj-c4x_q-CRoNcjC6NTIYsEYBDaic63hc05n3qFpBFJ4NoaH/exec", {
         method: "POST",
         body: formData,
-        mode: "no-cors", // Usar no-cors para evitar restricciones de CORS
-      }
-    )
-      .then(() => {
-        // Ocultar la animación de carga y mostrar el mensaje de éxito
-        document.getElementById("loading-animation").style.display = "none";
-        document.getElementById("success-message").style.display = "block";
-
-        // Después de 5 segundos, ocultar el mensaje de éxito
-        setTimeout(() => {
-          document.getElementById("success-message").style.display = "none";
-        }, 5000); // El mensaje de éxito se oculta después de 5 segundos
-      })
-      .catch((error) => {
-        // Ocultar la animación de carga y mostrar el mensaje de error
-        document.getElementById("loading-animation").style.display = "none";
-        document.getElementById("error-message").style.display = "block";
-        document.getElementById("error-message").textContent =
-          "Error al enviar: " + error.message;
-
-        console.error("Error al enviar el formulario:", error);
+        mode: "no-cors",
       });
 
-    // Reiniciar el formulario
-    document.getElementById("contactForm").reset();
-  });
+      // Simular éxito luego de 3 segundos
+      setTimeout(() => {
+        loadingAnimation.style.display = "none";
+        successMessage.style.display = "block";
+
+        // Hacer que el success desaparezca después de un rato
+        setTimeout(() => {
+          successMessage.style.opacity = "0";
+          setTimeout(() => {
+            successMessage.style.display = "none";
+            successMessage.style.opacity = "1"; // Restaurar para próximos envíos
+          }, 1000);
+        }, 3500);
+
+        // Resetear el formulario
+        contactForm.reset();
+      }, 3000);
+    });
+  }
+});
